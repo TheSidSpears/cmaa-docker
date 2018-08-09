@@ -1,4 +1,4 @@
-FROM php:7.0-cli
+FROM php:5.6-cli
 
 RUN apt-get update -yqq \
  && apt-get install -yqq \
@@ -18,7 +18,7 @@ RUN mkdir -p /root/.ssh \
  && rm -rf /root/insecure_id_rsa.pub \
 ;
 
-RUN pecl -q install xdebug-2.6.0 \
+RUN pecl -q install xdebug-2.5.5 \
 ;
 COPY ./conf.d/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 
